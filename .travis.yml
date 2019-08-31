@@ -1,0 +1,8 @@
+---
+
+language: js
+node_js:
+  - node
+
+script:
+  - make lint
