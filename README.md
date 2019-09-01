@@ -9,4 +9,6 @@
 </a>
 
 <h3>brain-even</h3>
-<script id="asciicast-WuReAmvlO9SvhphND1NjlLTt8" src="https://asciinema.org/a/WuReAmvlO9SvhphND1NjlLTt8.js" async></script>
+<a href="https://asciinema.org/a/WuReAmvlO9SvhphND1NjlLTt8" target="_blank">
+    <img src="https://asciinema.org/a/WuReAmvlO9SvhphND1NjlLTt8.svg" />
+</a>
