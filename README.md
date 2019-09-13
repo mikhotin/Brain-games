@@ -12,3 +12,6 @@
 <a href="https://asciinema.org/a/WuReAmvlO9SvhphND1NjlLTt8" target="_blank">
     <img src="https://asciinema.org/a/WuReAmvlO9SvhphND1NjlLTt8.svg" />
 </a>
+
+<h3>brain-calc</h3>
+<a href="https://asciinema.org/a/WmcjuWjUEHpM8DBrHsmZjf9Gw" target="_blank"><img src="https://asciinema.org/a/WmcjuWjUEHpM8DBrHsmZjf9Gw.svg" /></a>
