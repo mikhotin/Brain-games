@@ -2,7 +2,7 @@ import { getRandom, engineGame } from '../index';
 
 const description = () => console.log('What is the result of the expression?');
 const symbols = '+-*';
-const expression = (number1, number2, symbol) => {
+const calc = (number1, number2, symbol) => {
   let result = 0;
   switch (symbol) {
     case '-':
@@ -17,14 +17,14 @@ const expression = (number1, number2, symbol) => {
   return result;
 };
 
-function calc() {
+function game() {
   const num1 = getRandom(0, 100);
   const num2 = getRandom(0, 100);
   const randomSymbol = symbols[getRandom(0, 2)];
   console.log(`Question: ${num1} ${randomSymbol} ${num2}`);
-  return expression(num1, num2, randomSymbol).toString();
+  return calc(num1, num2, randomSymbol).toString();
 }
 
 export default function startGame() {
-  return engineGame(description, calc);
+  return engineGame(description, game);
 }
