@@ -11,7 +11,14 @@
     "brain-progression": "dist/bin/brain-progression.js",
     "brain-prime": "dist/bin/brain-prime.js"
   },
-  "keywords": ["brain-games", "brain-calc", "brain-even", "brain-gcd", "brain-prime", "brain-progression"],
+  "keywords": [
+    "brain-games",
+    "brain-calc",
+    "brain-even",
+    "brain-gcd",
+    "brain-prime",
+    "brain-progression"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
