@@ -1,7 +1,7 @@
 import { getRandom, engineGame } from '../index';
 
 const description = () => console.log('Find the greatest common divisor of given numbers.');
-const gcd = (x, y) => (x ? gcd(y % x, x) : y);
+const gcd = (num1, num2) => (num1 ? gcd(num2 % num1, num1) : num2);
 
 function game() {
   const num1 = getRandom(0, 100);

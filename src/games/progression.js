@@ -18,9 +18,9 @@ function game() {
   const difference = getRandom(1, 10);
   const gameProgression = progression(number, difference);
   const randomIndex = getRandom(0, 9);
-  const newArray = gameProgression.concat();
-  newArray[randomIndex] = '..';
-  console.log(`Question: ${newArray.join(' ')}`);
+  const missingProgression = gameProgression.concat();
+  missingProgression[randomIndex] = '..';
+  console.log(`Question: ${missingProgression.join(' ')}`);
   return gameProgression[randomIndex].toString();
 }
 
