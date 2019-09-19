@@ -1,13 +1,13 @@
 import { getRandom, engineGame } from '../index';
 
 const description = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-const isPrime = (n) => {
-  if (n === 1) {
+const isPrime = (num) => {
+  if (num === 1) {
     return 'no';
   }
 
-  for (let d = 2; d * d <= n; d += 1) {
-    if (n % d === 0) {
+  for (let divider = 2; divider * divider <= num; divider += 1) {
+    if (num % divider === 0) {
       return 'no';
     }
   }
