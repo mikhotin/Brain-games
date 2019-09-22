@@ -1,26 +1,26 @@
 import { getRandom, engineGame } from '../index';
 
-const description = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (num) => {
   if (num === 1) {
-    return 'no';
+    return false;
   }
 
   for (let divider = 2; divider * divider <= num; divider += 1) {
     if (num % divider === 0) {
-      return 'no';
+      return false;
     }
   }
 
-  return 'yes';
+  return true;
 };
 
-function game() {
-  const number = getRandom(0, 100);
-  console.log(`Question: ${number}`);
-  return isPrime(number);
+function runPrimeGame() {
+  const numberForGame = getRandom(0, 100);
+  console.log(`Question: ${numberForGame}`);
+  return isPrime(numberForGame) ? 'yes' : 'no';
 }
 
 export default function startGame() {
-  return engineGame(description, game);
+  return engineGame(description, runPrimeGame);
 }

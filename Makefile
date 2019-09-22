@@ -9,7 +9,7 @@ start:
 	npx babel-node src/bin/brain-progression.js
 
 test:
-	npx babel-node src/bin/brain-prime.js
+	npx babel-node src/bin/brain-gcd.js
 
 publish:
 	npm publish --dry-run

@@ -1,14 +1,14 @@
 import { getRandom, engineGame } from '../index';
 
-const description = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
-const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+const isEven = (num) => num % 2 === 0;
 
-function game() {
-  const number = getRandom(0, 100);
-  console.log(`Question: ${number}`);
-  return isEven(number);
+function runEvenGame() {
+  const numberForGame = getRandom(0, 100);
+  console.log(`Question: ${numberForGame}`);
+  return isEven(numberForGame) ? 'yes' : 'no';
 }
 
 export default function startGame() {
-  return engineGame(description, game);
+  return engineGame(description, runEvenGame);
 }

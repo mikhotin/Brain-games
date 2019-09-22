@@ -1,10 +1,10 @@
 import { getRandom, engineGame } from '../index';
 
-const description = () => console.log('What is the result of the expression?');
-const symbols = '+-*';
-const calc = (number1, number2, symbol) => {
+const description = 'What is the result of the expression?';
+const mathOperators = '+-*';
+const calc = (number1, number2, operator) => {
   let result = 0;
-  switch (symbol) {
+  switch (operator) {
     case '-':
       result = number1 - number2;
       break;
@@ -17,14 +17,14 @@ const calc = (number1, number2, symbol) => {
   return result;
 };
 
-function game() {
-  const num1 = getRandom(0, 100);
-  const num2 = getRandom(0, 100);
-  const randomSymbol = symbols[getRandom(0, 2)];
-  console.log(`Question: ${num1} ${randomSymbol} ${num2}`);
-  return calc(num1, num2, randomSymbol).toString();
+function runCalcGame() {
+  const numberForGame1 = getRandom(0, 100);
+  const numberForGame2 = getRandom(0, 100);
+  const randomOperator = mathOperators[getRandom(0, mathOperators.length - 1)];
+  console.log(`Question: ${numberForGame1} ${randomOperator} ${numberForGame2}`);
+  return calc(numberForGame1, numberForGame2, randomOperator).toString();
 }
 
 export default function startGame() {
-  return engineGame(description, game);
+  return engineGame(description, runCalcGame);
 }
