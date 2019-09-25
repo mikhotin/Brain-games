@@ -1,4 +1,4 @@
-import { getRandom, engineGame } from '../index';
+import { getRandom, engineGame, cons } from '../index';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (num) => {
@@ -17,8 +17,8 @@ const isPrime = (num) => {
 
 function runPrimeGame() {
   const numberForGame = getRandom(0, 100);
-  console.log(`Question: ${numberForGame}`);
-  return isPrime(numberForGame) ? 'yes' : 'no';
+  const expression = isPrime(numberForGame) ? 'yes' : 'no';
+  return cons(expression, `${numberForGame}`);
 }
 
 export default function startGame() {

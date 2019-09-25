@@ -1,4 +1,4 @@
-import { getRandom, engineGame } from '../index';
+import { getRandom, engineGame, cons } from '../index';
 
 const description = 'What is the result of the expression?';
 const mathOperators = '+-*';
@@ -21,8 +21,8 @@ function runCalcGame() {
   const numberForGame1 = getRandom(0, 100);
   const numberForGame2 = getRandom(0, 100);
   const randomOperator = mathOperators[getRandom(0, mathOperators.length - 1)];
-  console.log(`Question: ${numberForGame1} ${randomOperator} ${numberForGame2}`);
-  return calc(numberForGame1, numberForGame2, randomOperator).toString();
+  const expression = calc(numberForGame1, numberForGame2, randomOperator).toString();
+  return cons(expression, `${numberForGame1} ${randomOperator} ${numberForGame2}`);
 }
 
 export default function startGame() {

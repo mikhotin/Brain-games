@@ -1,4 +1,4 @@
-import { getRandom, engineGame } from '../index';
+import { getRandom, engineGame, cons } from '../index';
 
 const description = 'What number is missing in the progression?';
 const progression = (num, difference) => {
@@ -20,8 +20,8 @@ function runProgressionGame() {
   const randomIndex = getRandom(0, progression().length - 1);
   const missingProgression = gameProgression.concat();
   missingProgression[randomIndex] = '..';
-  console.log(`Question: ${missingProgression.join(' ')}`);
-  return gameProgression[randomIndex].toString();
+  const expression = gameProgression[randomIndex].toString();
+  return cons(expression, `${missingProgression.join(' ')}`);
 }
 
 export default function startGame() {
