@@ -1,29 +1,27 @@
-import { getRandom, engineGame, cons } from '../index';
+import { cons } from '@hexlet/pairs';
+import { getRandom, startEngine } from '../index';
 
 const description = 'What number is missing in the progression?';
-const progression = (num, difference) => {
-  const numbers = [num];
-  let result = num;
+const lengthOfProgression = 10;
+const getProgression = (num, difference) => {
+  const progression = [];
 
-  for (let i = 1, length = 10; i < length; i += 1) {
-    result += difference;
-    numbers.push(result);
+  for (let i = 0; i < lengthOfProgression; i += 1) {
+    progression[i] = num + difference * i;
   }
-
-  return numbers;
+  return progression;
 };
 
-function runProgressionGame() {
-  const numberForGame = getRandom(0, 100);
+const createProgressionGame = () => {
+  const startProgression = getRandom(0, 100);
   const difference = getRandom(1, 10);
-  const gameProgression = progression(numberForGame, difference);
-  const randomIndex = getRandom(0, progression().length - 1);
-  const missingProgression = gameProgression.concat();
-  missingProgression[randomIndex] = '..';
-  const expression = gameProgression[randomIndex].toString();
-  return cons(expression, `${missingProgression.join(' ')}`);
-}
+  const gameProgression = getProgression(startProgression, difference);
+  const hiddenElementIndex = getRandom(0, getProgression().length - 1);
+  const fakeProgression = gameProgression.concat();
+  fakeProgression[hiddenElementIndex] = '..';
+  const gameQuestion = `${fakeProgression.join(' ')}`;
+  const gameAnswer = gameProgression[hiddenElementIndex].toString();
+  return cons(gameAnswer, gameQuestion);
+};
 
-export default function startGame() {
-  return engineGame(description, runProgressionGame);
-}
+export default () => startEngine(description, createProgressionGame);

@@ -1,30 +1,30 @@
-import { getRandom, engineGame, cons } from '../index';
+import { cons } from '@hexlet/pairs';
+import { getRandom, startEngine } from '../index';
 
 const description = 'What is the result of the expression?';
 const mathOperators = '+-*';
-const calc = (number1, number2, operator) => {
+const getExpression = (numberOne, numberTwo, operator) => {
   let result = 0;
   switch (operator) {
     case '-':
-      result = number1 - number2;
+      result = numberOne - numberTwo;
       break;
     case '*':
-      result = number1 * number2;
+      result = numberOne * numberTwo;
       break;
     default:
-      result = number1 + number2;
+      result = numberOne + numberTwo;
   }
   return result;
 };
 
-function runCalcGame() {
-  const numberForGame1 = getRandom(0, 100);
-  const numberForGame2 = getRandom(0, 100);
+const createCalcGame = () => {
+  const operandOne = getRandom(0, 100);
+  const operandTwo = getRandom(0, 100);
   const randomOperator = mathOperators[getRandom(0, mathOperators.length - 1)];
-  const expression = calc(numberForGame1, numberForGame2, randomOperator).toString();
-  return cons(expression, `${numberForGame1} ${randomOperator} ${numberForGame2}`);
-}
+  const gameQuestion = `${operandOne} ${randomOperator} ${operandTwo}`;
+  const gameAnswer = getExpression(operandOne, operandTwo, randomOperator).toString();
+  return cons(gameAnswer, gameQuestion);
+};
 
-export default function startGame() {
-  return engineGame(description, runCalcGame);
-}
+export default () => startEngine(description, createCalcGame);

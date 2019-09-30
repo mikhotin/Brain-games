@@ -1,20 +1,19 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from '@hexlet/pairs';
 
 export const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 export const greeting = 'Welcome to the Brain Games!';
-export const cons = (x, y) => (func) => func(x, y);
-const car = (pair) => pair((x) => x);
-const cdr = (pair) => pair((x, y) => y);
+const gameRounds = 3;
 
-export function engineGame(description, func) {
+export const startEngine = (gameDescription, game) => {
   console.log(`${greeting}
-${description}`);
+${gameDescription}`);
 
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello ${userName}`);
 
-  for (let step = 1, round = 3; step <= round; step += 1) {
-    const resultOfGame = func();
+  for (let step = 1; step <= gameRounds; step += 1) {
+    const resultOfGame = game();
     const rightAnswer = car(resultOfGame);
     console.log(`Question: ${cdr(resultOfGame)}`);
     const answer = readlineSync.question('Your answer? ');
@@ -27,4 +26,4 @@ ${description}`);
     }
   }
   console.log(`Congratulations, ${userName}!`);
-}
+};

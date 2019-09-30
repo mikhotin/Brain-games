@@ -1,15 +1,16 @@
-import { getRandom, engineGame, cons } from '../index';
+import { cons } from '@hexlet/pairs';
+import { getRandom, startEngine } from '../index';
 
 const description = 'Find the greatest common divisor of given numbers.';
-const gcd = (num1, num2) => (num1 ? gcd(num2 % num1, num1) : num2);
+const getCommonDivisior = (numberOne, numberTwo) => (numberOne
+  ? getCommonDivisior(numberTwo % numberOne, numberOne) : numberTwo);
 
-function runGcdGame() {
-  const numberForGame1 = getRandom(0, 100);
-  const numberForGame2 = getRandom(0, 100);
-  const expression = gcd(numberForGame1, numberForGame2).toString();
-  return cons(expression, `${numberForGame1} ${numberForGame2}`);
-}
+const createGcdGame = () => {
+  const a = getRandom(0, 100);
+  const b = getRandom(0, 100);
+  const gameQuestion = `${a} ${b}`;
+  const gameAnswer = getCommonDivisior(a, b).toString();
+  return cons(gameAnswer, gameQuestion);
+};
 
-export default function startGame() {
-  return engineGame(description, runGcdGame);
-}
+export default () => startEngine(description, createGcdGame);
