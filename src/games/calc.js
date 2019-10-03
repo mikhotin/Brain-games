@@ -1,10 +1,11 @@
 import { cons } from '@hexlet/pairs';
-import { getRandom, startEngine } from '../index';
+import { startEngine } from '..';
+import getRandom from '../utils';
 
 const description = 'What is the result of the expression?';
 const mathOperators = '+-*';
 const getExpression = (numberOne, numberTwo, operator) => {
-  let result = 0;
+  let result;
   switch (operator) {
     case '-':
       result = numberOne - numberTwo;
@@ -12,8 +13,11 @@ const getExpression = (numberOne, numberTwo, operator) => {
     case '*':
       result = numberOne * numberTwo;
       break;
-    default:
+    case '+':
       result = numberOne + numberTwo;
+      break;
+    default:
+      result = null;
   }
   return result;
 };

@@ -1,9 +1,11 @@
 import { cons } from '@hexlet/pairs';
-import { getRandom, startEngine } from '../index';
+import { startEngine } from '..';
+import getRandom from '../utils';
 
 const description = 'What number is missing in the progression?';
-const lengthOfProgression = 10;
+
 const getProgression = (num, difference) => {
+  const lengthOfProgression = 10;
   const progression = [];
 
   for (let i = 0; i < lengthOfProgression; i += 1) {

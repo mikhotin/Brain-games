@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { getRandom, startEngine } from '../index';
+import { startEngine } from '..';
+import getRandom from '../utils';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (number) => {

@@ -10,7 +10,7 @@ start:
 	npx babel-node src/bin/brain-prime.js
 
 test:
-	npx babel-node src/bin/brain-prime.js
+	npx babel-node src/bin/brain-even.js
 
 publish:
 	npm publish --dry-run
