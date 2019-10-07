@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import { startEngine } from '..';
+import startEngine from '..';
 import getRandom from '../utils';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -12,10 +12,10 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-const createPrimeGame = () => {
+const makeQuestionAnswer = () => {
   const gameQuestion = getRandom(0, 100);
   const gameAnswer = isPrime(gameQuestion) ? 'yes' : 'no';
-  return cons(gameAnswer, gameQuestion);
+  return cons(gameQuestion, gameAnswer);
 };
 
-export default () => startEngine(description, createPrimeGame);
+export default () => startEngine(description, makeQuestionAnswer);
